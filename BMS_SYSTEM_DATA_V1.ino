@@ -1,7 +1,7 @@
 //Include required libraries
-#include "WiFi.h"
-#include <HTTPClient.h>
-#include "time.h"
+#include "WiFi.h"                  //WIFI LIBRARY FOR ESP32 38/30 PINS MCU
+#include <HTTPClient.h>            //FOR CONNECTION ON SERVER LIKE ON WEB_PAGES
+#include "time.h"                  //CALLING TIME LIBRARY FOR REAL TIME MONITORING 
 #include "ACS712.h"                //CALLING LIBRARY FOR CURRENT SENSOR
 #include <DHT.h>
 
@@ -21,18 +21,19 @@ const char* password =    "E7m7BwTW";        // change password JUTT960954,E7m7B
 
 
 // Google script ID and required credentials
+//YOU CAN FIND OUT THIS ID BY DEPLOYING YOUR AAP SCRIPT THEN IT WILL BE GENERATED FOR USE 
 String GOOGLE_SCRIPT_ID = "AKfycbxNT_EvgbMA7f_YYaiGvtUG1ST-2M2uGpMl592nPfY2R3bM8QPFPKLuYERTu4f9c1gg";    // change Gscript ID
 
 
 int     i=0;                         //SET I = 0 FOR LOOP BELOW
-int     adc_value = 0.00;               //INITIALIZE THE PARAMETER FOR SAVING ADC_VALUE BELOW
+int     adc_value = 0.00;            //INITIALIZE THE PARAMETER FOR SAVING ADC_VALUE BELOW
 // float   Vo = 0.00;                //INITIAL VALUE FOR Vo as a float value
 // float   Ao = 0.00;                //INITIAL VALUE FOR Ao
 
 float ACS_SENSITIVITY = 0.066;         //BASICALLY IT'S THE CURRENT SENSOR SENSITIVTY FOR 30AMPS SENSOR (ITS CONSTANT)
 float B1_Volts        =  0.00;         //INITIAL VALUE FOR b1_voltage as a float value
 float B1_Current      =  0.00;         //INITIAL VALUE FOR Current
-float Temperature     =  0.00;
+float Temperature     =  0.00;         //FOR TEMPERATURE INITALLING FLOAT BALUE
 float Humidity        =  5.00;
 float ref_voltage     =   3.3;
 float adc_voltage     =  0.00;
@@ -48,14 +49,14 @@ void setup()
 
 {
   delay(1000);
-  Serial.begin(115200);
+  Serial.begin(115200);               //SETTING UP BAUD FOR WIFI CONNECTION BCZ WIFI MODULE WORKS ON THIS BAOU
   delay(1000);
 
   pinMode(LED_BUILTIN,OUTPUT);
 
-  // connect to WiFi
+  // CONNECT TO WIFI
   Serial.println();
-  Serial.print("Connecting to wifi: ");
+  Serial.print("Connecting to wifi: ");  
   Serial.println(ssid);
   Serial.flush();
   WiFi.begin(ssid, password);
@@ -66,7 +67,7 @@ void setup()
     Serial.print(".");
   }
 
-     if (WiFi.status() == WL_CONNECTED) 
+     if (WiFi.status() == WL_CONNECTED)     //IF CONDITION IS APPLIED THAT IF WIFI IS DONE THEN LINK 
    
    {
     
