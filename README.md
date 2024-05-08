@@ -1,3 +1,3 @@
-# DATA_LOGGER_CODE
+# BATTERY_HEALTH_MONITORING_SYSTEM_CODE
 Basically this code represent about the monitoring of SOLAR PANELS also use for research if somebody wants like AS I, also made this for my university fourth semester project in regards of SOLAR PANELS monitoring.This code covers the findings of voltage,current,temperature,humidity &amp; power of the your setup of SOLAR PANELS and also tells you how much battery charged.
 And here for this I, used NODE MCU for the wifi connection for easily accessing all data on GOOGLE SHEETS a very good platform...
